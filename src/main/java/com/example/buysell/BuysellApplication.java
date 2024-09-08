@@ -10,5 +10,4 @@ public class BuysellApplication {
 
 		SpringApplication.run(BuysellApplication.class, args);
 	}
-
 }
