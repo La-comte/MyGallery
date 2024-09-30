@@ -16,9 +16,11 @@ public class Image {
     private Long id;
     private boolean isPreview;
     private String name;
-    private String originalName;
+    private String originalFileName;
     private String contentType;
     private Long size;
     @Lob
     private byte[] bytes;
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    private Product product;
 }
