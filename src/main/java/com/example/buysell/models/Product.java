@@ -1,4 +1,5 @@
 package com.example.buysell.models;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,21 +22,26 @@ public class Product {
     @Column(columnDefinition = "text")
     private String description;
     private int price;
-    private String city;
-    private String author;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, //при удалении товара можно удалить все фото
-    mappedBy = "product") //??
-    private Long previewImageId;
-    private List<Image> images = new ArrayList<>();
-    private LocalDateTime dateOfCreate;
+    private String nameMenuSection;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
+//при удалении товара можно удалить все фото
+    private Image image;
 
-    @PrePersist
-    private void init(){
-        dateOfCreate = LocalDateTime.now();
+    public void addImageToProduct(Image image) {
+        image.setProduct(this);
     }
 
-    public void addImageToProduct(Image image){
-        image.setProduct(this);
-        images.add(image);
+    @ManyToMany(mappedBy = "products")
+    private List<Purchase> purchases;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", nameMenuSection='" + nameMenuSection +
+                '}';
     }
 }

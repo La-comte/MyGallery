@@ -16,13 +16,11 @@ import java.io.ByteArrayInputStream;
 @RequiredArgsConstructor
 public class ImageController {
     private final ImageRepository imageRepository;
-    @GetMapping("/images/{id}")
+    @GetMapping("/image/{id}")
     private ResponseEntity<?> getImageById(@PathVariable Long id){
         Image image = imageRepository.findById(id).orElse(null);
-        assert image != null;
         return ResponseEntity.ok()
                 .header("fileName", image.getOriginalFileName())
-                .contentType(MediaType.valueOf(image.getContentType()))
                 .contentLength(image.getSize())
                 .body(new InputStreamResource(new ByteArrayInputStream(image.getBytes())));
     }

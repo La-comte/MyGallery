@@ -1,33 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BUYSELL</title>
+    <title>Лан Ма</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>BUYSELL</h1><hr>
-<h4>Картины со всей России</h4>
-<form action="/" method="get">
-    Поиск по названию объявления: <input type="text" name="title"><br>
-    <input type="submit" value="Поиск"/>
-</form>
-<#list products as product>
-    <div>
-        <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробнее...</a></p>
-    </div>
-    <#else>
-        <h3>Товаров нет</h3>
-</#list>
-<hr>
-<h3>Создать новый товар</h3>
-<form action="/product/create" method="post">
-    Название объявления: <input type="text" name="title"/><br><br>
-    Описание объявления: <input type="text" name="description"/><br><br>
+<h1>Лан Ма</h1>
+<h3>Создать новое блюдо</h3>
+<form action="/product/create" method="post" enctype="multipart/form-data">
+    Название: <input type="text" name="title"/><br><br>
+    Описание: <input type="text" name="description"/><br><br>
     Цена: <input type="number" name="price"/><br><br>
-    Город: <input type="text" name="city"/><br><br>
-    Имя: <input type="text" name="author"/><br><br>
-    Первая фотография: <input type="file" name="file1"/><br><br>
-    Вторая фотография: <input type="file" name="file2"/><br><br>
-    Третья фотография: <input type="file" name="file3"/><br><br>
+    Имя раздела: <input type="text" name="author"/><br><br>
+    Фотография: <input type="file" name="file1"/><br><br>
     <input type="submit" value="Добавить товар"/>
 </form>
 </body>
