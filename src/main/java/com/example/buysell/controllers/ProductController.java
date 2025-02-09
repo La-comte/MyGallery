@@ -46,7 +46,7 @@ public class ProductController {
     @PostMapping("/product/create")
     public String createProduct(@RequestParam(name = "file1") MultipartFile file1, Product product) throws IOException {
         System.out.println(file1);
-        productService.saveProduct(product, file1);
+        productService.saveProduct(product);
         return "redirect:/";
     }
 

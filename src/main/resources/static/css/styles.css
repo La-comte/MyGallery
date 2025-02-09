@@ -170,3 +170,34 @@ body {
 .checkout-btn:hover {
     background-color: #6b9a9a;
 }
+.menu-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.menu-img {
+    width: 100%;  /* Растягиваем изображение по ширине контейнера */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    max-width: 200px; /* Максимальный размер */
+    max-height: 200px;
+    object-fit: cover; /* Обрезает края, если изображение не идеально вписывается */
+    border-radius: 10px; /* Скругляем углы для красивого вида */
+    display: block;
+    margin: 0 auto 10px; /* Центрируем и добавляем отступ вниз */
+}
+
+
+.add-to-cart {
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #ff3385;
+}
+

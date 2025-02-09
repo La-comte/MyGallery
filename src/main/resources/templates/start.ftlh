@@ -28,19 +28,24 @@
 <main>
     <section id="menu">
         <h1 class="container">Меню</h1>
-        <div class="container menu-grid">
-            <#list products as product>
-                <div>
-                    <form method="get" action="/cart/add/${product.id}">
+        <div class="container">
+            <div class="row">
+                <#list products as product>
+                <div class="col-md-4">
+                    <div class="menu-item">
+                        <img src="/${product.image.filePath}" alt="${product.title}" class="menu-img">
                         <h3>${product.title}</h3>
-                        <p>${product.price} ₽ </p>
-                        <button class="add-to-cart">Добавить в корзину</button></br>
+                        <p>${product.price} ₽</p>
+                        <form method="get" action="/cart/add/${product.id}">
+                            <button class="add-to-cart">Добавить в корзину</button>
+                        </form>
                         <a href="/product/${product.id}">Подробнее о товаре</a>
-                    </form>
+                    </div>
                 </div>
             </#list>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="about" class="container">
         <h3>J'PAN – маленькая Япония в центре Москвы, Городские японские бистро, в которых нет ни столетних традиций, ни тысячелетней истории.</h3>

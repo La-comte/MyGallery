@@ -25,23 +25,23 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public void saveProduct(Product product, MultipartFile file1) throws IOException {
-        Image image1;
+    public void saveProduct(Product product) throws IOException {
+        /*Image image1;
         if (file1.getSize() !=0){
             image1 = toImageEntity(file1);
             product.addImageToProduct(image1);
-        }
+        }*/
         log.info("Save new Product. Title: {}", product.getTitle());
         productRepository.save(product);
     }
-    private Image toImageEntity(MultipartFile file) throws IOException {
+    /*private Image toImageEntity(MultipartFile file) throws IOException {
         Image image = new Image();
         image.setName(file.getName());
         image.setOriginalFileName(file.getOriginalFilename());
         image.setSize((int) file.getSize());
         image.setBytes(file.getBytes());
         return image;
-    }
+    }*/
 
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);

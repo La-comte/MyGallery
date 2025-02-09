@@ -19,7 +19,6 @@
                 <ul class="nav-list">
                     <li><a href="/">Меню</a></li>
                     <li><a href="cart">Корзина</a></li>
-                    <li><a href="#about">О нас</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,10 +34,6 @@
                 <button class="add-to-cart">Добавить в корзину</button></br>
             </form>
         </div>
-    <section id="about">
-        <h3>J'PAN – маленькая Япония в центре Москвы, Городские японские бистро, в которых нет ни столетних традиций, ни тысячелетней истории.</h3>
-    </section>
-    <p><h4>Раздел для <a href="/admin">администраторов</a></h4></p>
 </main>
 </body>
 </html>
